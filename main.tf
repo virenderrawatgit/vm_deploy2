@@ -13,8 +13,8 @@ resource "azurerm_windows_virtual_machine" "tvm01" {
   location              = var.loc
   name                  = "vm001"
   size                  = "Standard_DS4_v2"
-  admin_username        = "virender"
-  admin_password        = "Hcl@123456789"
+  admin_username        = var.userID
+  admin_password        = var.userPass
   network_interface_ids = [azurerm_network_interface.tnic01.id]
 
   os_disk {
